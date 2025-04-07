@@ -1,0 +1,86 @@
+body {
+    background-color: #548687;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    height: 70vmin;
+    width: 70vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr);   /* 3 rows */
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Makes the buttons circular */
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    font-size: 5vmin;
+    cursor: pointer;
+    aspect-ratio: 1; /* Ensures the buttons stay perfectly square */
+}
+
+.box:hover {
+    background-color: #f0f0f0;
+}
+
+#reset_btn, #newGm-btn {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 20vmin;
+    border-radius: 1rem;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.mess-container {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 2rem;
+}
+
+.mess-container.Show {
+    display: flex; /* Shown when required */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        height: 90vmin;
+        width: 90vmin;
+    }
+
+    .box {
+        font-size: 4vmin;
+    }
+
+    #reset_btn, #newGm-btn {
+        width: 25vmin;
+        font-size: 0.8rem;
+    }
+}
